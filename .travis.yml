@@ -8,6 +8,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 sudo: false
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id: AKIAIXSAFTOMITJARX5Q
   secret_access_key:
