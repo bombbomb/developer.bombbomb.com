@@ -9,10 +9,13 @@ Features to build
  - Styles for /api
  - Client library listing
  
+ 
  To install a development environment, install ruby on your machine, then:
+ 
  `gem install jekyll bundler`
  
  To host a development environment:
+ 
  `bundle exec jekyll serve`
  
- Then you can access your local version at [http://localhost:4000](http://localhost:4000)
+ Then you can access your local development site at [http://localhost:4000](http://localhost:4000) changes to file contents are automatically reflected here.
