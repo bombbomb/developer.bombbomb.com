@@ -1,0 +1,33 @@
+language: ruby
+rvm:
+- 2.1
+
+before_script:
+ - chmod +x ./script/cibuild # or do this locally and commit
+
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+script: ./script/cibuild
+
+# branch whitelist, only for GitHub Pages
+branches:
+  only:
+  - gh-pages     # test the gh-pages branch
+  - /pages-(.*)/ # test every branch which starts with "pages-"
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false # route your build to the container-based infrastructure for a faster build
+
+deploy:
+  provider: s3
+  access_key_id:
+    secure: HbVROoper2avv4xh/xVsnJF8MO/4vWWRSjDyLqtEra+o8xtlUdxjuBQkfSqQtOKBsaXvNfxhUCAJVKPk2tLHwyyZA12bnBeQvqlK7PysYkgNFDBik/s5i2EpDL79E7cfcrUP4w4KEIUEaa1l+KIbV/miJBdsA+L1dY759rwnEVs=
+  secret_access_key:
+    secure: Ew77WWHPy5h0kcgg9nM0mGWMIh5uiej0qlRtlgfm2Mfr5cdGonhTytJitDRqRJbDLArxCBpw3fe6Sazr72WnhVCqbJOrfYpvlIXk+RSK1leOKEsY7/jIdAYAaRwCh9mhQ79kvgJBkgDRA3UyzYgvCVFxhqRaHdXEF60SU+r8oeY=
+  bucket: developer.bombbomb.com
+  skip_cleanup: true
+  acl: public_read
+  local_dir: ./script/cibuild/_site
