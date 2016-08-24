@@ -27,3 +27,4 @@ markdown: kramdown
 theme: minima
 
 api_spec_url: https://local.api.bombbomb.com/v2/spec
+exclude: [vendor]
