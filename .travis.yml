@@ -6,7 +6,7 @@ before_install:
 
 script:
  - bundle exec jekyll build
- - java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i http://petstore.swagger.io/v2/swagger.json -l php -o ._site/clients/php
+ - java -jar swagger-codegen-cli.jar generate -i http://petstore.swagger.io/v2/swagger.json -l php -o ._site/clients/php
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
