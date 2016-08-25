@@ -1,8 +1,14 @@
 language: ruby
 rvm:
-- 2.1
+ - 2.1
+before_install:
+ - sudo apt-get update
+ - sudo apt-get install default-jre
+ - wget http://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.1/swagger-codegen-cli-2.2.1.jar -O swagger-codegen-cli.jar
+
 script:
-- bundle exec jekyll build
+ - bundle exec jekyll build
+ - java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i http://petstore.swagger.io/v2/swagger.json -l php -o ._site/clients/php
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
