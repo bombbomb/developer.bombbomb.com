@@ -1,6 +1,16 @@
+---
+
+---
 <!DOCTYPE html>
 <html>
-<head>
+{% include head.html %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+{% include nav.html %}
+
+
+
+
+
   <meta charset="UTF-8">
   <title>Swagger UI</title>
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
@@ -38,7 +48,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "/v2/spec";
+        url = "https://dev.api.bombbomb.com/v2/spec";
       }
 
       hljs.configure({
@@ -93,7 +103,7 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io"><img class="logo__img" alt="swagger" height="30" width="30" src="images/logo_small.png" /><span class="logo__title">swagger</span></a>
+
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
       <div id='auth_container'></div>
@@ -104,5 +114,9 @@
 
 <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+
+
+{% include footer.html %}
+{% include js.html %}
 </body>
 </html>
