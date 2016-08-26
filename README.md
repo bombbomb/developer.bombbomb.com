@@ -1,13 +1,21 @@
-Grayscale Jekyll theme
-=========================
+# developer.bombbomb.com
 
-Jekyll theme based on [Grayscale bootstrap theme ](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
+[![Build Status](https://travis-ci.org/bombbomb/developer.bombbomb.com.svg?branch=master)](https://travis-ci.org/bombbomb/developer.bombbomb.com)
 
-## Demo
-View this jekyll theme in action [here](https://jeromelachaud.github.io/grayscale-theme)
+Generates the site at [developer.bombbomb.com](http://developer.bombbomb.com)
 
-## Screenshot
-![screenshot](https://raw.githubusercontent.com/jeromelachaud/grayscale-theme/master/screenshot.png)
-
-=========
-For more details, read the [documentation](http://jekyllrb.com/)
+Features to build
+ - Homepage
+ - Styles for /api
+ - Client library listing
+ 
+ 
+ To install a development environment, install ruby on your machine, then:
+ 
+ `gem install jekyll bundler`
+ 
+ To host a development environment:
+ 
+ `bundle exec jekyll serve`
+ 
+ Then you can access your local development site at [http://localhost:4000](http://localhost:4000) changes to file contents are automatically reflected here.
