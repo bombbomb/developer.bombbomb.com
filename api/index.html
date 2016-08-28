@@ -1,13 +1,6 @@
 ---
-# say word, son
+layout: default
 ---
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Swagger explorer</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -100,11 +93,6 @@
             }
 
             $('#input_apiKey').change(addApiKeyAuthorization);
-            // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-            /*
-             var apiKey = "myApiKeyXXXX123456789";
-             $('#input_apiKey').val(apiKey);
-             */
 
             window.swaggerUi.load();
 
@@ -203,12 +191,7 @@
         });
     </script>
 
-</head>
 
-<body class="page-docs" style="zoom: 1;">
-<header class="site-header">
-    {% include nav.html %}
-</header>
 
 <section class="content">
     <div id="api2-explorer">
@@ -220,5 +203,4 @@
         </div>
     </div>
 </section>
-</body>
-</html>
+
