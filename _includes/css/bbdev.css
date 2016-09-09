@@ -1,0 +1,8 @@
+.packageImg { height:50px; margin: 10px 0; text-align: center; }
+
+.packageImg  .img-responsive {
+    display: block !important;
+    width: auto !important;
+    max-height: 100% !important;
+    margin: 0 auto;
+}
