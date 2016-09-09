@@ -26,3 +26,12 @@ markdown: kramdown
 permalink: pretty
 
 exclude: [vendor]
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "blogPost"
+      permalink: "/blog/:year/:month/:day/:title/"
+      excerpt_separator: <!--more-->
