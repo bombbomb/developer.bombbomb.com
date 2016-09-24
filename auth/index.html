@@ -2,5 +2,47 @@
 layout: standardPage
 ---
 
+<div class="row">
+    <div class="col-lg-12">
 
-<p>We use Oauth and you're going to love it</p>
+        <h1>Authorizing using OAuth2</h1>
+        <p>
+            To work with the BombBomb API, you need to register a <em>Client Application</em>.
+            Your client application can be issued access tokens by our mutual user to access their BombBomb resources.
+        </p>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-lg-offset-5">
+
+        <a href="/api/#!/Utilities/CreateOAuthClient" class="btn btn-primary">Register a Client Application</a>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2>Start the Process...</h2>
+        <p>Create a hyperlink from your application directing users to the OAuth Approval page. The user will elect to
+            approve or not approve your request. If they approve, you'll receive back an <em>authorization code</em></p>
+
+        <pre>https://app.bombbomb.com/auth/authorize?client_id=<span style="color:red;">YOUR_ID_HERE</span>&scope=<span style="color:red;">manage:all</span>&redirect_uri=<span style="color:red;">YOUR_CALLBACK_URL</span>&response_type=code</pre>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2>Use the code to get a token</h2>
+        <p>Your callback url will get a <code>code</code> querystring parameter. Now you'll use your API Client's Secret, combined with the user authorization code to get the final token you can use to access the user's resources.</p>
+
+        <pre>POST https://app.bombbomb.com/auth/token
+
+</pre>
+
+    </div>
+</div>
