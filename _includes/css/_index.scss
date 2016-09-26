@@ -16,3 +16,20 @@
     }
   }
 }
+
+#getting_started, #why_bombbomb {
+  width: 100%;
+  padding: 75px;
+}
+
+
+
+#why_bombbomb {
+  background: $white;
+  h2 {
+    color: $orange;
+  }
+}
+#getting_started {
+  background: $teal;
+}

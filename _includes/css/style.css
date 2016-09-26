@@ -26,4 +26,16 @@ nav {
   margin-left: -45px;
   left: 50%; }
 
+#getting_started, #why_bombbomb {
+  width: 100%;
+  padding: 75px; }
+
+#why_bombbomb {
+  background: #FFFFFF; }
+  #why_bombbomb h2 {
+    color: #FF6600; }
+
+#getting_started {
+  background: #4DBFBB; }
+
 /*# sourceMappingURL=style.css.map */
