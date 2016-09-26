@@ -1,4 +1,5 @@
 nav {
+  text-transform: none;
   .navbar-brand {
     height: auto;
   }
@@ -9,6 +10,7 @@ nav {
   &.top-nav-collapse {
     background: $orange;
   }
+
 
   .navbar-nav {
     > li > a {
