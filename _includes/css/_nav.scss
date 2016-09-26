@@ -9,6 +9,17 @@ nav {
   &.top-nav-collapse {
     background: $orange;
   }
+
+  .navbar-nav {
+    > li > a {
+      padding: 5px 15px;
+      margin: 15px 15px 0;
+    }
+  }
+
+  .boxedlink {
+    border: 1px solid #fff;
+  }
   
   .menu-btn ul {
     display: none;

@@ -4,6 +4,11 @@ nav img {
   width: 250px; }
 nav.top-nav-collapse {
   background: #FF6600; }
+nav .navbar-nav > li > a {
+  padding: 5px 15px;
+  margin: 15px 15px 0; }
+nav .boxedlink {
+  border: 1px solid #fff; }
 nav .menu-btn ul {
   display: none; }
 
