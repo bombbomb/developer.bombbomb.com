@@ -2,4 +2,7 @@ _site
 .idea
 .DS_Store
 */.DS_Store
+css/*
+.sass-cache
+_includes/css/style.css.map
 /_site/

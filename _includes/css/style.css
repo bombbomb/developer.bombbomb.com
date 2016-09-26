@@ -1,4 +1,10 @@
+nav .navbar-brand {
+  height: auto; }
 nav img {
   width: 250px; }
+nav.top-nav-collapse {
+  background: #FF6600; }
+nav .menu-btn ul {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

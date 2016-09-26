@@ -1,5 +1,16 @@
 nav {
+  .navbar-brand {
+    height: auto;
+  }
   img {
     width: 250px;
+  }
+
+  &.top-nav-collapse {
+    background: $orange;
+  }
+  
+  .menu-btn ul {
+    display: none;
   }
 }
