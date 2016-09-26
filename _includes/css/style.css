@@ -14,4 +14,16 @@ nav {
   nav .menu-btn ul {
     display: none; }
 
+.intro .intro-body .brand-heading {
+  color: #FFC400;
+  text-transform: none; }
+.intro .intro-body .intro-text {
+  border-bottom: 1px solid #FFFFFF; }
+.intro .intro-body .btn-circle {
+  border: none;
+  position: absolute;
+  bottom: 25px;
+  margin-left: -45px;
+  left: 50%; }
+
 /*# sourceMappingURL=style.css.map */
