@@ -31,3 +31,30 @@ $('[data-type="background"]').each(function(){
         }
     });
 });
+
+
+window.onload = function() {
+
+    function handler1() {
+        $('.menu-btn ul').animate({"margin-right": '+=250'});
+        $('body').animate({"width": '-=250'});
+        $('.navbar').animate({"width": '-=250'});
+        $(this).one("click", handler2);
+    }
+
+    function handler2() {
+        $('.menu-btn ul').animate({"margin-right": '-=250'});
+        $('body').animate({"width": '+=250'});
+        $('.navbar').animate({"width": '+=250'});
+        $(this).one("click", handler1);
+    }
+
+    $("#nav-icon3").one("click", handler1);
+
+}
+
+$(document).ready(function(){
+    $('#nav-icon3').click(function(){
+        $(this).toggleClass('open');
+    });
+});
