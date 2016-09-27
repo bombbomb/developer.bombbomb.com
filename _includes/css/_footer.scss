@@ -1,0 +1,17 @@
+footer {
+  background: $gray4;
+  padding: 75px 100px;
+
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      a {
+        color: $white;
+        padding: 0 0 0 15px;
+        text-transform: uppercase;
+        @include heavy;
+      }
+    }
+  }
+}

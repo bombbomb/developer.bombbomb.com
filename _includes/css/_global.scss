@@ -13,3 +13,9 @@ $gray3:      #484949;
 $gray4:      #2C2E2F;
 $black:      #000000;
 
+@mixin light(){font-weight:200;font-family:'Avenir LT W01_35 Light1475496', 'Avenir', Helvetica, Arial, sans-serif;}
+@mixin roman(){font-weight:300;font-family:'Avenir LT W01_55 Roman1475520', 'Avenir', Helvetica, Arial, sans-serif;}
+@mixin book(){font-weight:400;font-family:'Avenir LT W01_45 Book1475508', 'Avenir', Helvetica, Arial, sans-serif;}
+@mixin medium(){font-weight:500;font-family:'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif;}
+@mixin heavy(){font-weight:600;font-family:'Avenir LT W01_85 Heavy1475544', 'Avenir', Helvetica, Arial, sans-serif;}
+@mixin black(){font-weight:700;font-family:'Avenir LT W01_95 Black1475556', 'Avenir', Helvetica, Arial, sans-serif;}
