@@ -1,0 +1,77 @@
+.standard {
+  .navbar {
+    background: $orange;
+    padding: 0 135px;
+  }
+  .row {
+    padding: 50px 150px;
+  }
+
+  h1 {
+    color: $blue;
+    text-transform: none;
+    @include medium;
+    margin: 150px 0 15px;
+  }
+  p {
+    color: $gray4;
+  }
+
+  .library {
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      max-width: 70%;
+      margin: 0 15%;
+      margin: 50px auto;
+      max-height: 100px;
+    }
+    .packageInfo {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $teal;
+      text-align: center;
+      padding: 35px;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          padding: 0 0 15px;
+          a {
+            color: $white;
+            font-size: 18px;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    &:hover .packageInfo {
+      display: block;
+    }
+  }
+
+
+  .missing {
+    background: $teal;
+    width: 100%;
+    p {
+      color: $white;
+      a {
+        color: $white;
+        @include heavy;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

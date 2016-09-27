@@ -1,3 +1,6 @@
+body {
+  background: #FFFFFF; }
+
 .navbar {
   text-transform: none;
   padding: 25px 135px; }
@@ -197,5 +200,62 @@ footer {
   #libraries img {
     width: 80%;
     margin: 0 10%; }
+
+.standard .navbar {
+  background: #FF6600;
+  padding: 0 135px; }
+.standard .row {
+  padding: 50px 150px; }
+.standard h1 {
+  color: #0096C9;
+  text-transform: none;
+  font-weight: 500;
+  font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif;
+  margin: 150px 0 15px; }
+.standard p {
+  color: #2C2E2F; }
+.standard .library {
+  height: 200px;
+  overflow: hidden; }
+  .standard .library img {
+    max-width: 70%;
+    margin: 0 15%;
+    margin: 50px auto;
+    max-height: 100px; }
+  .standard .library .packageInfo {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #4DBFBB;
+    text-align: center;
+    padding: 35px; }
+    .standard .library .packageInfo ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .standard .library .packageInfo ul li {
+        padding: 0 0 15px; }
+        .standard .library .packageInfo ul li a {
+          color: #FFFFFF;
+          font-size: 18px; }
+          .standard .library .packageInfo ul li a:hover {
+            text-decoration: underline; }
+  .standard .library:hover .packageInfo {
+    display: block; }
+.standard .missing {
+  background: #4DBFBB;
+  width: 100%; }
+  .standard .missing p {
+    color: #FFFFFF; }
+    .standard .missing p a {
+      color: #FFFFFF;
+      font-weight: 600;
+      font-family: 'Avenir LT W01_85 Heavy1475544', 'Avenir', Helvetica, Arial, sans-serif;
+      cursor: pointer; }
+      .standard .missing p a:hover {
+        text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

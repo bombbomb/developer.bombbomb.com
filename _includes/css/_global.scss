@@ -19,3 +19,7 @@ $black:      #000000;
 @mixin medium(){font-weight:500;font-family:'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif;}
 @mixin heavy(){font-weight:600;font-family:'Avenir LT W01_85 Heavy1475544', 'Avenir', Helvetica, Arial, sans-serif;}
 @mixin black(){font-weight:700;font-family:'Avenir LT W01_95 Black1475556', 'Avenir', Helvetica, Arial, sans-serif;}
+
+body {
+  background: $white;
+}
