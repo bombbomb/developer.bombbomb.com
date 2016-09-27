@@ -37,15 +37,15 @@ window.onload = function() {
 
     function handler1() {
         $('.menu-btn ul').animate({"margin-right": '+=250'});
-        $('body').animate({"width": '-=250'});
-        $('.navbar').animate({"width": '-=250'});
+        $('body').animate({"padding-right": '+=250'});
+        $('.navbar').animate({"margin-right": '+=250'});
         $(this).one("click", handler2);
     }
 
     function handler2() {
         $('.menu-btn ul').animate({"margin-right": '-=250'});
-        $('body').animate({"width": '+=250'});
-        $('.navbar').animate({"width": '+=250'});
+        $('body').animate({"padding-right": '-=250'});
+        $('.navbar').animate({"margin-right": '-=250'});
         $(this).one("click", handler1);
     }
 

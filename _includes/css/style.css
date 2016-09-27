@@ -4,6 +4,8 @@ body {
 .navbar {
   text-transform: none;
   padding: 25px 135px; }
+  .navbar .mobile {
+    display: none; }
   .navbar .navbar-brand {
     height: auto; }
   .navbar img {
@@ -178,7 +180,7 @@ footer {
     #getting_started .steps img {
       max-height: 45px;
       margin: 0 0 10px; }
-    #getting_started .steps:hover > p {
+    #getting_started .steps:hover > div {
       display: inline;
       width: 100%;
       height: 100%;
@@ -186,11 +188,20 @@ footer {
       position: absolute;
       top: 0;
       left: 0;
-      padding: 50px 20px;
-      font-size: 14px;
       margin: 0; }
-      #getting_started .steps:hover > p a {
-        color: #E1E1E1; }
+      #getting_started .steps:hover > div p {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: #FFFFFF;
+        left: 0;
+        padding: 0 20px;
+        font-size: 14px;
+        display: inline; }
+      #getting_started .steps:hover > div a {
+        color: #E1E1E1;
+        cursor: pointer; }
 
 #libraries {
   background: #E1E1E1; }
@@ -247,7 +258,12 @@ footer {
     display: block; }
 .standard .missing {
   background: #4DBFBB;
-  width: 100%; }
+  width: 100%;
+  margin: 0; }
+  .standard .missing h2 {
+    text-transform: none;
+    font-weight: 500;
+    font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif; }
   .standard .missing p {
     color: #FFFFFF; }
     .standard .missing p a {
@@ -257,5 +273,49 @@ footer {
       cursor: pointer; }
       .standard .missing p a:hover {
         text-decoration: underline; }
+
+@media screen and (max-width: 1450px) {
+  #getting_started .steps {
+    width: calc(26% - 25px); } }
+@media screen and (max-width: 1050px) {
+  #getting_started .steps {
+    width: calc(50% - 25px); } }
+@media screen and (max-width: 993px) {
+  #libraries .col-md-2 {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 10px 30px; }
+
+  .nav > li.desk {
+    display: none; }
+
+  .navbar .mobile {
+    display: block; }
+
+  .navbar {
+    padding: 25px; }
+    .navbar.top-nav-collapse {
+      padding: 0 25px 0 0; }
+
+  .navbar-right {
+    margin: 0; } }
+@media screen and (max-width: 770px) {
+  .navbar {
+    padding: 0;
+    background: #FF6600; }
+
+  .navbar-right {
+    position: absolute;
+    top: -5px;
+    right: 40px; }
+
+  .intro {
+    height: 100%; }
+
+  .intro .intro-body .intro-text {
+    display: inline-block; } }
+@media screen and (max-width: 625px) {
+  #getting_started .steps {
+    width: calc(100% - 25px); } }
 
 /*# sourceMappingURL=style.css.map */

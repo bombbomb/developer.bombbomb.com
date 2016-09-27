@@ -1,0 +1,57 @@
+@media screen and (max-width: 1450px) {
+  #getting_started .steps {
+    width: calc(26% - 25px);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #getting_started .steps {
+    width: calc(50% - 25px);
+  }
+}
+
+@media screen and (max-width: 993px) {
+  #libraries .col-md-2 {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 10px 30px;
+  }
+  .nav>li.desk {
+    display: none;
+  }
+  .navbar .mobile {
+    display: block;
+  }
+  .navbar {
+    padding: 25px;
+    &.top-nav-collapse {
+      padding: 0 25px 0 0;
+    }
+  }
+  .navbar-right  {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .navbar {
+    padding: 0;
+    background: $orange;
+  }
+  .navbar-right {
+    position: absolute;
+    top: -5px;
+    right: 40px;
+  }
+  .intro {
+    height: 100%;
+  }
+  .intro .intro-body .intro-text {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 625px) {
+  #getting_started .steps {
+    width: calc(100% - 25px);
+  }
+}
