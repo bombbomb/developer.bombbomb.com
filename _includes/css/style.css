@@ -160,7 +160,7 @@ footer {
     display: none; }
   #getting_started .steps {
     background: #38918F;
-    width: calc(20% - 50px);
+    width: calc(20% - 25px);
     display: inline-block;
     margin: 10px;
     vertical-align: top;
@@ -216,7 +216,8 @@ footer {
   background: #FF6600;
   padding: 0 135px; }
 .standard .row {
-  padding: 50px 150px; }
+  padding: 50px 150px;
+  margin: 0; }
 .standard h1 {
   color: #0096C9;
   text-transform: none;
