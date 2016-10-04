@@ -303,6 +303,10 @@ footer {
       cursor: pointer; }
       .standard .missing p a:hover {
         text-decoration: underline; }
+.standard cite {
+  display: block;
+  color: #2C2E2F;
+  margin: 0 0 50px; }
 
 @media screen and (max-width: 1550px) {
   #getting_started .steps {
@@ -361,5 +365,11 @@ footer {
 @media screen and (max-width: 725px) {
   #getting_started .steps {
     width: calc(100% - 25px); } }
+@media screen and (max-width: 500px) {
+  #getting_started, #why_bombbomb, #libraries {
+    padding: 15px; }
+
+  .navbar .menu-btn ul {
+    background: #e1e1e1; } }
 
 /*# sourceMappingURL=style.css.map */
