@@ -1,6 +1,8 @@
 .navbar {
     text-transform: none;
     padding: 25px 135px;
+    width: 100%;
+  left: auto;
   .mobile {
     display:none;
   }
@@ -41,7 +43,8 @@
     ul {
      // display: none;
       position: fixed;
-      background: $gray1;
+      background: #E1E1E1 url(img/bomb.png) no-repeat -53px bottom;
+      background-size: 300px auto;
       right: 0;
       top: 0;
       height: 100%;

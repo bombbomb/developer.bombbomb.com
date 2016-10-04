@@ -1,9 +1,12 @@
 body {
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  position: relative; }
 
 .navbar {
   text-transform: none;
-  padding: 25px 135px; }
+  padding: 25px 135px;
+  width: 100%;
+  left: auto; }
   .navbar .mobile {
     display: none; }
   .navbar .navbar-brand {
@@ -28,7 +31,8 @@ body {
     cursor: pointer; }
   .navbar .menu-btn ul {
     position: fixed;
-    background: #E1E1E1;
+    background: #E1E1E1 url(img/bomb.png) no-repeat -53px bottom;
+    background-size: 300px auto;
     right: 0;
     top: 0;
     height: 100%;
@@ -300,12 +304,26 @@ footer {
       .standard .missing p a:hover {
         text-decoration: underline; }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1550px) {
   #getting_started .steps {
-    width: calc(26% - 25px); } }
-@media screen and (max-width: 1050px) {
+    width: calc(26% - 25px); }
+
+  #why_bombbomb div.row div.bg {
+    background-size: auto 100%; } }
+@media screen and (max-width: 1350px) {
+  #why_bombbomb div.row div.bg {
+    background: url("img/bomb.png") no-repeat left center;
+    background-size: auto 80%; } }
+@media screen and (max-width: 1250px) {
   #getting_started .steps {
     width: calc(50% - 25px); } }
+@media screen and (max-width: 1193px) {
+  #why_bombbomb div.row div.bg {
+    display: none; }
+
+  #why_bombbomb div.row div.text {
+    width: 100%;
+    text-align: center; } }
 @media screen and (max-width: 993px) {
   #libraries .col-md-2 {
     display: inline-block;
@@ -340,7 +358,7 @@ footer {
 
   .intro .intro-body .intro-text {
     display: inline-block; } }
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 725px) {
   #getting_started .steps {
     width: calc(100% - 25px); } }
 

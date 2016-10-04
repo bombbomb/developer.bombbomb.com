@@ -1,15 +1,34 @@
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1550px) {
   #getting_started .steps {
     width: calc(26% - 25px);
   }
+  #why_bombbomb div.row div.bg {
+    background-size: auto 100%;
+  }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1350px) {
+  #why_bombbomb div.row div.bg {
+    background: url('img/bomb.png') no-repeat left center;
+    background-size: auto 80%;
+  }
+
+}
+@media screen and (max-width: 1250px) {
   #getting_started .steps {
     width: calc(50% - 25px);
   }
 }
 
+@media screen and (max-width: 1193px) {
+    #why_bombbomb div.row div.bg {
+      display: none;
+    }
+  #why_bombbomb div.row div.text {
+    width: 100%;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 993px) {
   #libraries .col-md-2 {
     display: inline-block;
@@ -50,7 +69,7 @@
     display: inline-block;
   }
 }
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 725px) {
   #getting_started .steps {
     width: calc(100% - 25px);
   }
