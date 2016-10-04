@@ -1,6 +1,9 @@
 footer {
   background: $gray4;
-  padding: 75px 100px;
+  .row {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
 
   ul {
     list-style-type: none;

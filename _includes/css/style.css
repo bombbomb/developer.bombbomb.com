@@ -108,8 +108,10 @@ body {
   left: 50%; }
 
 footer {
-  background: #2C2E2F;
-  padding: 75px 100px; }
+  background: #2C2E2F; }
+  footer .row {
+    max-width: 1500px;
+    margin: 0 auto; }
   footer ul {
     list-style-type: none; }
     footer ul li {
@@ -141,14 +143,36 @@ footer {
 #getting_started, #why_bombbomb, #libraries {
   width: 100%;
   padding: 75px; }
+  #getting_started .row, #why_bombbomb .row, #libraries .row {
+    max-width: 1500px;
+    margin: 0 auto; }
 
 #why_bombbomb {
   background: #FFFFFF; }
+  #why_bombbomb div.row {
+    position: relative; }
+  #why_bombbomb div.row div.text {
+    width: 60%;
+    float: right;
+    text-align: left; }
+  #why_bombbomb div.row div.bg {
+    background: url("img/bomb.png") no-repeat left 50px;
+    background-size: auto 120%;
+    width: 40%;
+    height: calc(100% + 150px);
+    position: absolute;
+    left: 0;
+    top: -75px; }
   #why_bombbomb h2 {
     color: #FF6600;
     text-transform: none;
     font-weight: 500;
     font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif; }
+  #why_bombbomb p {
+    color: #2C2E2F;
+    padding-right: 20px; }
+    #why_bombbomb p:last-child {
+      margin: 0; }
 
 #getting_started {
   background: #4DBFBB; }
@@ -210,7 +234,8 @@ footer {
     padding: 0; }
   #libraries img {
     width: 80%;
-    margin: 0 10%; }
+    margin: 0 10%;
+    opacity: 0.7; }
 
 .standard .navbar {
   background: #FF6600;
