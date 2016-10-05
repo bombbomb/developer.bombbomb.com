@@ -77,8 +77,20 @@
 
 @media screen and (max-width: 500px) {
   #getting_started, #why_bombbomb, #libraries {
-    padding: 15px;
+    padding: 30px 5px;
   }
+  .navbar .menu-btn ul {
+    background: #e1e1e1;
+  }
+  .standard .navbar {
+    padding: 0;
+  }
+  .standard .row {
+    padding: 0;
+  }
+}
+
+@media screen and (max-height: 650px) {
   .navbar .menu-btn ul {
     background: #e1e1e1;
   }
