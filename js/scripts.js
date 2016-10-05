@@ -36,16 +36,16 @@ $('[data-type="background"]').each(function(){
 window.onload = function() {
 
     function handler1() {
-        $('.menu-btn ul').animate({"margin-right": '+=250'});
-        $('body').animate({"padding-right": '+=250'});
-        $('.navbar').animate({"margin-right": '+=250'});
+        $('.menu-btn ul').animate({"right": '250px'});
+        $('body').animate({"right": '250px'});
+        $('.navbar').animate({"right": '250px'});
         $(this).one("click", handler2);
     }
 
     function handler2() {
-        $('.menu-btn ul').animate({"margin-right": '-=250'});
-        $('body').animate({"padding-right": '-=250'});
-        $('.navbar').animate({"margin-right": '-=250'});
+        $('.menu-btn ul').animate({"right": '0px'});
+        $('body').animate({"right": '0px'});
+        $('.navbar').animate({"right": '0px'});
         $(this).one("click", handler1);
     }
 

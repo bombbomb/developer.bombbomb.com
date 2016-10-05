@@ -1,9 +1,12 @@
 body {
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  position: relative; }
 
 .navbar {
   text-transform: none;
-  padding: 25px 135px; }
+  padding: 25px 135px;
+  width: 100%;
+  left: auto; }
   .navbar .mobile {
     display: none; }
   .navbar .navbar-brand {
@@ -28,7 +31,8 @@ body {
     cursor: pointer; }
   .navbar .menu-btn ul {
     position: fixed;
-    background: #E1E1E1;
+    background: #E1E1E1 url(img/bomb.png) no-repeat -53px bottom;
+    background-size: 300px auto;
     right: 0;
     top: 0;
     height: 100%;
@@ -108,8 +112,10 @@ body {
   left: 50%; }
 
 footer {
-  background: #2C2E2F;
-  padding: 75px 100px; }
+  background: #2C2E2F; }
+  footer .row {
+    max-width: 1500px;
+    margin: 0 auto; }
   footer ul {
     list-style-type: none; }
     footer ul li {
@@ -141,14 +147,36 @@ footer {
 #getting_started, #why_bombbomb, #libraries {
   width: 100%;
   padding: 75px; }
+  #getting_started .row, #why_bombbomb .row, #libraries .row {
+    max-width: 1500px;
+    margin: 0 auto; }
 
 #why_bombbomb {
   background: #FFFFFF; }
+  #why_bombbomb div.row {
+    position: relative; }
+  #why_bombbomb div.row div.text {
+    width: 60%;
+    float: right;
+    text-align: left; }
+  #why_bombbomb div.row div.bg {
+    background: url("img/bomb.png") no-repeat left 50px;
+    background-size: auto 120%;
+    width: 40%;
+    height: calc(100% + 150px);
+    position: absolute;
+    left: 0;
+    top: -75px; }
   #why_bombbomb h2 {
     color: #FF6600;
     text-transform: none;
     font-weight: 500;
     font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif; }
+  #why_bombbomb p {
+    color: #2C2E2F;
+    padding-right: 20px; }
+    #why_bombbomb p:last-child {
+      margin: 0; }
 
 #getting_started {
   background: #4DBFBB; }
@@ -210,7 +238,8 @@ footer {
     padding: 0; }
   #libraries img {
     width: 80%;
-    margin: 0 10%; }
+    margin: 0 10%;
+    opacity: 0.7; }
 
 .standard .navbar {
   background: #FF6600;
@@ -274,13 +303,31 @@ footer {
       cursor: pointer; }
       .standard .missing p a:hover {
         text-decoration: underline; }
+.standard cite {
+  display: block;
+  color: #2C2E2F;
+  margin: 0 0 50px; }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1550px) {
   #getting_started .steps {
-    width: calc(26% - 25px); } }
-@media screen and (max-width: 1050px) {
+    width: calc(26% - 25px); }
+
+  #why_bombbomb div.row div.bg {
+    background-size: auto 100%; } }
+@media screen and (max-width: 1350px) {
+  #why_bombbomb div.row div.bg {
+    background: url("img/bomb.png") no-repeat left center;
+    background-size: auto 80%; } }
+@media screen and (max-width: 1250px) {
   #getting_started .steps {
     width: calc(50% - 25px); } }
+@media screen and (max-width: 1193px) {
+  #why_bombbomb div.row div.bg {
+    display: none; }
+
+  #why_bombbomb div.row div.text {
+    width: 100%;
+    text-align: center; } }
 @media screen and (max-width: 993px) {
   #libraries .col-md-2 {
     display: inline-block;
@@ -315,8 +362,23 @@ footer {
 
   .intro .intro-body .intro-text {
     display: inline-block; } }
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 725px) {
   #getting_started .steps {
     width: calc(100% - 25px); } }
+@media screen and (max-width: 500px) {
+  #getting_started, #why_bombbomb, #libraries {
+    padding: 30px 5px; }
+
+  .navbar .menu-btn ul {
+    background: #e1e1e1; }
+
+  .standard .navbar {
+    padding: 0; }
+
+  .standard .row {
+    padding: 0; } }
+@media screen and (max-height: 650px) {
+  .navbar .menu-btn ul {
+    background: #e1e1e1; } }
 
 /*# sourceMappingURL=style.css.map */
