@@ -29,12 +29,9 @@ layout: standardPage
 </div>
 
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="application/javascript">
 $(document).ready(function() {
-
-
-    jQuery.get('https://api.bombbomb.com/v2/webhook/events', function(data) {
+    jQuery.get('https://local.api.bombbomb.com/v2/webhook/events', function(data) {
         console.log(data);
         var container = jQuery("#webhookListing");
 
@@ -50,7 +47,6 @@ $(document).ready(function() {
             row.append(div);
             container.append(row);
         }
-
     });
 });
 </script>
