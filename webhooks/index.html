@@ -41,11 +41,14 @@ $(document).ready(function() {
         for (var i=0;i<data.length;i++) {
             var event = data[i];
 
-            var div = jQuery("<div class='webhookItem' />");
+            var row = jQuery("<div class='row'></div>");
+            var div = jQuery("<div class='col-lg-8 col-lg-offset-2' />");
             div.append("<div class='webhookItemHeader'>" + event.eventName + "</div>");
             div.append("<pre>" + JSON.stringify(event, null, 4) + "</pre>");
 
-            container.append(div);
+
+            row.append(div);
+            container.append(row);
         }
 
     });
