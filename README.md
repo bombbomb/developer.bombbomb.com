@@ -4,18 +4,18 @@
 
 Generates the site at [developer.bombbomb.com](http://developer.bombbomb.com)
 
-Features to build
- - Homepage
- - Styles for /api
- - Client library listing
+To do:
+ - Finish Auth Page
+ - Get Webhooks listed
+ - Bottom nav not linked
  
  
- To install a development environment, install ruby on your machine, then:
+To install a development environment, install ruby on your machine, then:
  
- `gem install jekyll bundler`
+`gem install jekyll bundler`
  
- To host a development environment:
+To host a development environment:
  
- `bundle exec jekyll serve`
+`bundle exec jekyll serve`
  
- Then you can access your local development site at [http://localhost:4000](http://localhost:4000) changes to file contents are automatically reflected here.
+Then you can access your local development site at [http://localhost:4000](http://localhost:4000) changes to file contents are automatically reflected here.
