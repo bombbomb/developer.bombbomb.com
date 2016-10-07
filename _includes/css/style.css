@@ -183,7 +183,8 @@ footer {
   #getting_started h2 {
     text-transform: none;
     font-weight: 500;
-    font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif; }
+    font-family: 'Avenir LT W01_65 Medium1475532', 'Avenir', Helvetica, Arial, sans-serif;
+    color: #fff; }
   #getting_started p {
     display: none; }
   #getting_started .steps {
@@ -199,7 +200,8 @@ footer {
       font-size: 18px;
       line-height: 1.25;
       font-weight: 600;
-      font-family: 'Avenir LT W01_85 Heavy1475544', 'Avenir', Helvetica, Arial, sans-serif; }
+      font-family: 'Avenir LT W01_85 Heavy1475544', 'Avenir', Helvetica, Arial, sans-serif;
+      color: #fff; }
     #getting_started .steps span {
       display: block;
       font-size: 12px;

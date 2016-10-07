@@ -69,6 +69,7 @@
   h2 {
     text-transform: none;
     @include medium;
+    color: #fff;
   }
   p {
     display: none;
@@ -86,6 +87,7 @@
       font-size: 18px;
       line-height: 1.25;
       @include heavy;
+      color: #fff;
     }
     span {
       display: block;
