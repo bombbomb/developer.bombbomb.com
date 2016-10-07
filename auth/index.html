@@ -37,12 +37,35 @@ layout: standardPage
 <div class="row">
     <div class="col-lg-12">
 
-        <h2>Use the code to get a token</h2>
-        <p>Your callback url will get a <code>code</code> querystring parameter. Now you'll use your API Client's Secret, combined with the user authorization code to get the final token you can use to access the user's resources.</p>
+        <h2>Use the code to get an access token</h2>
+        <p>The client will now send a POST request to the authorization server with the following parameters:</p>
 
-        <pre>POST https://app.bombbomb.com/auth/token
+        <pre>POST https://app.bombbomb.com/auth/access_token</pre>
 
-</pre>
+        <ul>
+            <li><code>grant_type</code> with the value of <code>authorization_code</code></li>
+            <li><code>client_id</code> with the client identifier</li>
+            <li><code>client_secret</code> with the client secret</li>
+            <li><code>redirect_uri</code> with the same redirect URI the user was redirect back to</li>
+            <li><code>code</code> with the authorization code from the query string</li>
+        </ul>
+
+
+        <p>The authorization server will respond with a JSON object containing the following properties:</p>
+        <ul>
+            <li><code>token_type</code> with the value <code>Bearer</code></li>
+            <li><code>expires_in</code> with an integer representing the TTL of the access token</li>
+            <li><code>access_token</code> a JWT signed with the authorization server’s private key</li>
+            <li><code>refresh_token</code> an encrypted payload that can be used to refresh the access token when it expires.</li>
+        </ul>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2>Make requests with your access token</h2>
+        <p>Now that you have an access token, you can use our <a href="/api">api</a> by providing an <code>Authorization</code> header with the format <code>Bearer [access token]</code></p>
 
     </div>
 </div>

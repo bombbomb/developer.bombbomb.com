@@ -2,4 +2,51 @@
 layout: standardPage
 ---
 
-<h1>Webhooks!</h1>
+<div class="row">
+    <div class="col-lg-12">
+
+        <h1>What are Webhooks?</h1>
+
+
+        <p>Webhooks are near real-time <code>HTTP POST</code> requests sent an endpoints you provide. These allow your servers
+            to be aware of events going on in our mutual clients' BombBomb accounts. You'll be notified of interactions, video events
+            and more! Use our api to <a href="/api/#!/Webhooks/AddWebHook">register a webhook for our mutual clients</a>.</p>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2>What webhooks are there?</h2>
+
+        <div id="webhookListing">
+
+        </div>
+
+    </div>
+</div>
+
+
+<script type="application/javascript">
+$(document).ready(function() {
+    jQuery.get('https://local.api.bombbomb.com/v2/webhook/events', function(data) {
+        console.log(data);
+        var container = jQuery("#webhookListing");
+
+        for (var i=0;i<data.length;i++) {
+            var event = data[i];
+
+            var row = jQuery("<div class='row'></div>");
+            var div = jQuery("<div class='col-lg-8 col-lg-offset-2' />");
+            div.append("<div class='webhookItemHeader'>" + event.eventName + "</div>");
+            div.append("<pre>" + JSON.stringify(event, null, 4) + "</pre>");
+
+
+            row.append(div);
+            container.append(row);
+        }
+    });
+});
+</script>
