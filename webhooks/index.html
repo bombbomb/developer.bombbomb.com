@@ -31,7 +31,7 @@ layout: standardPage
 
 <script type="application/javascript">
 $(document).ready(function() {
-    jQuery.get('https://local.api.bombbomb.com/v2/webhook/events', function(data) {
+    jQuery.get('https://api.bombbomb.com/v2/webhook/events', function(data) {
         console.log(data);
         var container = jQuery("#webhookListing");
 
