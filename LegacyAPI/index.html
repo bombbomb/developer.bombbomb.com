@@ -1,0 +1,322 @@
+---
+layout: standardPage
+---
+
+<style>
+    h1,h2,h3,h4,h5,h6 { text-transform: none !important; }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <h1>BombBomb's Legacy API</h1>
+        <h3>There are two APIs that BombBomb makes available:<br /><br /></h3>
+        <p>1. Our <a href="/api">V2 API</a>. This is a thoughtful, RESTful, OAuth2-only, and Swagger-compatible modern API. <em>We encourage you to focus your development on the <a href="/api">V2 API</a>.</em></p>
+        <p>2. The Legacy API, described below, has a little more character. It also has some functionality not yet available in V2, so we make it available to you here. <em style="color:red;">Be advised that our intention is to sunset the legacy API in the late 2018 timeframe.</em></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <h2>Getting Started with the Legacy API</h2>
+
+        <p>The Legacy API is accessed via HTTP GET or POST requests to the url:</p>
+        <h4>https://app.bombbomb.com/app/api/api.php</h4>
+
+        <p>Responses from the API are JSON encoded objects with three root properties:<br/>
+            <i>status</i>, <i>methodName</i>, and <i>info</i>.
+            status will be either &#8216;success&#8217; or &#8216;failure&#8217;, &#8216;methodName&#8217; will be the
+            same as what&#8217;s passed in the  &#8216;method&#8217; parameter, and &#8216;info&#8217; will contain information about the action varying by
+            method.</p>
+
+
+        <h2>Parameters</h2>
+        <p>Parameters are passed either by GET or POST. We STRONGLY recommend POSTing your parameters inside an encrypted HTTPS request.
+            You control what action you&#8217;re taking using the <code>method</code> parameter. The majority of this document is categorized by method.</p>
+
+
+        <h2>Authorization</h2>
+        <p>Along with the method you request, you must provide an <code>Authorization</code> header with an <a href="/auth/">authorization token</a></p>
+
+
+        <h2>Example</h2>
+        <p>An example of the first method below, IsValidLogin, would look something like this:</p>
+        <h4>
+            https://app.bombbomb.com/app/api/api.php?method=IsValidLogin
+        </h4>
+
+
+
+        <hr />
+
+
+        <h2>Methods</h2>
+        <div class="well">
+            <h3>IsValidLogin</h3>
+            <p>Checks if entered credentials are valid.</p>
+        </div>
+        <div class="well">
+            <h3>GetVideos</h3>
+            <p>Returns a list of all videos in the account.</p>
+        </div>
+        <div class="well">
+            <h3>AddVideo</h3>
+            <p>Uploads a video file to the account. Must be POSTed.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>name</b> &#8211; The name of the new video.</li>
+                <li><b>videoFile</b> &#8211; The video binary itself, POSTed as an attachment.</li>
+                <li><b>description</b> &#8211; Optional. A description of the video.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>VideoQuickSend</h3>
+            <p>Sends a simple email with a video automatically inserted.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>email_addresses</b> &#8211; A semicolon-delimited list of destination email addresses.</li>
+                <li><b>list_id</b> &#8211; One list_id to send the video to. list_ids can be found via GetLists</li>
+                <li><b>video_id</b> &#8211; The id of the video to quick send.</li>
+                <li><b>subject</b> &#8211; The subject line for the email.</li>
+                <li><b>mobile_message</b> &#8211; The body of the email</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetLists</h3>
+            <p>Returns a list of all Lists in the account.</p>
+        </div>
+        <div class="well">
+            <h3>CreateList</h3>
+            <p>Creates a new list and returns its details</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>name</b> &#8211; The name you want to give the new list.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>DeleteList</h3>
+            <p>Deletes a list and all the contacts on it.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>list_id</b> &#8211; The id of the list you want to delete.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetListContacts</h3>
+            <p>Returns all contacts on a list.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>list_id</b> &#8211; The id of the list whose contacts you are requesting.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>AddContact</h3>
+            <p>Adds a contact to a list with optional extended parameters.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>eml</b> &#8211; The email address of the contact (Must be valid and sendable)</li>
+                <li><b>firstname</b> &#8211; Optional. The first name of the contact</li>
+                <li><b>lastname</b> &#8211; Optional. The last name of the contact</li>
+                <li><b>phone_number</b> &#8211; Optional. The phone number of the contact</li>
+                <li><b>address_line_1</b> &#8211; Optional. The address of the contact</li>
+                <li><b>address_line_2</b> &#8211; Optional. The address of the contact</li>
+                <li><b>city</b> &#8211; Optional. The city of the contact</li>
+                <li><b>state</b> &#8211; Optional. The state of the contact</li>
+                <li><b>country</b> &#8211; Optional. The country of the contact</li>
+                <li><b>postal_code</b> &#8211; Optional. The postal code of the contact</li>
+                <li><b>company</b> &#8211; Optional. The company of the contact</li>
+                <li><b>position</b> &#8211; Optional. The position of the contact</li>
+                <li><b>comments</b> &#8211; Optional. Comment about the contact</li>
+                <li><b>Custom Fields</b> &#8211; Optional. Use the GetContactFields method to get a list of custom
+                    fields. You can pass through these custom fields using their &#8216;field_name&#8217; as the
+                    parameter name.
+                </li>
+                <li><b>listlist</b> &#8211; A semicolon delimited list of list ids to add the contact to.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>UpdateContact</h3>
+            <p>Updates fields for a contact based on the email address</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>eml</b> &#8211; The email address of the contact</li>
+                <li><b>firstname</b> &#8211; Optional. The first name of the contact</li>
+                <li><b>lastname</b> &#8211; Optional. The last name of the contact</li>
+                <li><b>phone_number</b> &#8211; Optional. The phone number of the contact</li>
+                <li><b>address_line_1</b> &#8211; Optional. The address of the contact</li>
+                <li><b>address_line_2</b> &#8211; Optional. The address of the contact</li>
+                <li><b>city</b> &#8211; Optional. The city of the contact</li>
+                <li><b>state</b> &#8211; Optional. The state of the contact</li>
+                <li><b>country</b> &#8211; Optional. The country of the contact</li>
+                <li><b>postal_code</b> &#8211; Optional. The postal code of the contact</li>
+                <li><b>company</b> &#8211; Optional. The company of the contact</li>
+                <li><b>position</b> &#8211; Optional. The position of the contact</li>
+                <li><b>comments</b> &#8211; Optional. Comment about the contact</li>
+                <li><b>Custom Fields</b> &#8211; Optional. Use the GetContactFields method to get a list of custom
+                    fields. You can pass through these custom fields using their &#8216;field_name&#8217; as the
+                    parameter name.
+                </li>
+                <li><b>listlist</b> &#8211; A semicolon delimited list of list ids to add the contact to.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetContact</h3>
+            <p>Updates fields for a contact based on the email address</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>contact_id</b> &#8211; The id of the contact you would like to retrieve.</li>
+                <li><b>eml</b> &#8211; The email address of the contact you would like to retrieve.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>SuppressEmails</h3>
+            <p>Suppresses all email addresses</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>emailAddresses</b> &#8211; Comma delimited list of email addresses to be suppressed.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>AddEmailToList</h3>
+            <p>Adds a single email address to a single list</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>new_email_address</b> &#8211; The email address to be added to the list.</li>
+                <li><b>list_id</b> &#8211; The id of the list to add the email address to.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>RemoveEmailFromList</h3>
+            <p>Removes a single email address from a single list</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>new_email_address</b> &#8211; The email address to be removed from the list.</li>
+                <li><b>list_id</b> &#8211; The id of the list to remove the email address from.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetContactFields</h3>
+            <p>Gets a list of standard and custom fields available for contacts</p>
+        </div>
+        <div class="well">
+            <h3>importCsvToList</h3>
+            <p>Imports many contacts from a CSV file to the requested list. This method will return immediately, while
+                the actual import will happen in another process. You can use the GetListProcessingStatus method to
+                monitor import progress.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>list_id</b> &#8211; The id of the list you would like to import these contacts to. Use GetLists
+                    method to find list ids.
+                </li>
+                <li><b>fields</b> &#8211; Fields is an ordered comma-delimited list of field_names in the CSV file.
+                    These field names can be found with the GetContactFields method.
+                </li>
+                <li><b>csv</b> &#8211; The csv field should contain the POSTed csv file itself.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetListProcessingStatus</h3>
+            <p>Returns the status of a list import. There will be two properties, status and message. Status will be
+                either 1 for importing, or 0 for not importing.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>list_id</b> &#8211; The id of the list to check.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetEmails</h3>
+            <p>Returns a list of all emails in the account.</p>
+        </div>
+        <div class="well">
+            <h3>GetEmailTags</h3>
+            <p>Returns a list of email tag names and ids.</p>
+        </div>
+        <div class="well">
+            <h3>GetAllEmailsByTag</h3>
+            <p>Returns a list of emails that have the specified tag.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>tagId</b> &#8211; The id of the tag category. Can be acquired via GetEmailTags.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>SendEmailToEmailAddress</h3>
+            <p>Sends an existing email to an address.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>email_id</b> &#8211; The id of the email you would like to send.</li>
+                <li><b>email_address</b> &#8211; The email address you wish to send the email to.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>SendCustomVideoEmail</h3>
+            <p>Sends a custom-formatted email to addresses.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>emailId</b> &#8211; The id of the email you would like to send this as.</li>
+                <li><b>emailAddresses</b> &#8211; A semicolon-delimited list of email addresses to send to.</li>
+                <li><b>htmlContent</b> &#8211; The HTML of the email you wish to send.</li>
+                <li><b>subject</b> &#8211; The subject line of the email.</li>
+                <li><b>fromName</b> &#8211; Optional. The name to send from. Default is the account profile information.
+                </li>
+                <li><b>fromEmail</b> &#8211; Optional. The email address to send from. Default is the account profile
+                    information
+                </li>
+                <li><b>share</b> &#8211; Optional. Boolean. If the email should contain social sharing icons. Defaults
+                    to true
+                </li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>emailTracking</h3>
+            <p>Retrieves results of email sends.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>action</b> &#8211; The type of tracking request you are making. Available actions:
+                    <ul style="font-size: smaller;">
+                        <li><b>listJobs</b> &#8211; Requires email_id, lists all jobs for the email.</li>
+                        <li><b>getAggregateStatsForAllJobs</b> &#8211; Requires email_id, get summarized numbers for all
+                            sends for one email.
+                        </li>
+                        <li><b>getAggregateStatsForJob</b> &#8211; Requires job_id, get summarized numbers for one email
+                            job.
+                        </li>
+                        <li><b>getPerContactDetailForAllJobs</b> &#8211; Requires email_id, gets detailed interaction
+                            data for all sends for one email.
+                        </li>
+                        <li><b>getPerContactDetailForJob</b> &#8211; Requires job_id, gets detailed interaction data for
+                            one email job.
+                        </li>
+                    </ul>
+                </li>
+                <li><b>email_id</b> &#8211; Conditionally Optional. The id of the email you would like to track.</li>
+                <li><b>job_id</b> &#8211; Conditionally Optional. The id of the email job you would like to track.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>GetDrips</h3>
+            <p>Returns a list of drips in an account</p>
+        </div>
+        <div class="well">
+            <h3>addToDrip</h3>
+            <p>Adds an email address to a drip.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>d</b> &#8211; The id of the Drip to add the email address to.</li>
+                <li><b>e</b> &#8211; The email address to add to the drip.</li>
+            </ul>
+        </div>
+        <div class="well">
+            <h3>removeFromDrip</h3>
+            <p>Removes an email address from a drip.</p>
+            <p><b>Parameters</b></p>
+            <ul>
+                <li><b>d</b> &#8211; The id of the drip to add the email address to.</li>
+                <li><b>e</b> &#8211; The email address to add to the drip.</li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
