@@ -2424,3 +2424,7 @@ body {
     text-align: center;
     padding-top: 10px
 }
+
+.modal-dialog {
+    z-index: 9999;
+}
