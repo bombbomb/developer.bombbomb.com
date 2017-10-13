@@ -16,5 +16,6 @@ deploy:
   bucket: developer.bombbomb.com
   local-dir: _site
   acl: public_read
+  cache_control: "max-age=120"
   on:
     repo: bombbomb/developer.bombbomb.com
