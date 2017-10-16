@@ -12,6 +12,17 @@ videos shot with the BombBomb Android camera.
 <!--more--> 
 
 
+<ul>
+{% for member in site.data.members %}
+
+{{ member.name }} <br/>
+{{ member.title }} <br/>
+Twitter: {{ member.twitter }} <br/>
+Github: {{ member.github }} <br/>
+
+{% endfor %}
+</ul>
+
 
 
 
