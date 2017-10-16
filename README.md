@@ -5,9 +5,7 @@
 Generates the site at [developer.bombbomb.com](http://developer.bombbomb.com)
 
 To do:
- - Finish Auth Page
  - Get Webhooks listed
- - Bottom nav not linked
  
  
 To install a development environment, install ruby on your machine, then:
