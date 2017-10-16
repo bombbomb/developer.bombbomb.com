@@ -18,6 +18,7 @@ layout: standardPage
     <div class="col-lg-6">
 
         <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <em>By {{ post.author }}, {{ post.date | date: '%B %-d, %Y' }}</em>
         <p>
             {{ post.excerpt }}
             <a href="{{ post.url }}">Read More</a>
