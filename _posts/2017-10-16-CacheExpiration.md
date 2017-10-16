@@ -21,6 +21,6 @@ We chose a one-liner: configure our S3 objects to have a TTL of a few minutes. [
 
 You can [read the pertinent travis-ci docs here](https://docs.travis-ci.com/user/deployment/s3/#HTTP-cache-control).
 
-A modest downside here is that your cache is going to miss more often. Depending on the traffic to your site this will affect latency somewhat. For our use case, this wasn't a major concern, at least for now.
+A downside here is that your cache is going to miss more often. Depending on the traffic to your site this will affect latency somewhat. For our use case, this wasn't a major concern, at least for now.
 
 ![Too Easy]({{ "/img/blog_imgs/easy.gif" | absolute_url }})
