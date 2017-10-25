@@ -3,14 +3,15 @@ title: Data Detection in Swift
 author: Tom Harrington
 ---
 
-I have a love/hate relationship with regular expressions. I **love** them because they're great for examining text to find useful information and, often, to change the text in some way. I **hate** them because once you get beyond basic matching, they descend into bizarre [write-only code](https://en.wikipedia.org/wiki/Write-only_language) that gives me flashbacks to my days writing Perl. In extreme cases they may well [endanger the universe](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454).
+I have a love/hate relationship with regular expressions. I **love** them because they're great for examining text to find useful information and, often, to change the text in some way. I **hate** them because once you get beyond basic matching, they descend into bizarre [write-only code](https://en.wikipedia.org/wiki/Write-only_language) that gives me flashbacks to my days writing Perl. In extreme cases they may well [endanger the universe](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454). And so we come to one of my recent coding issues: How can I find out if a string contains a valid email address?
 
-And so we come to one of my recent coding issues: How can I find out if a string contains a valid email address?
 <!--more--> 
 
 Of course you can't be completely sure an email address is valid without sending an email and then checking to see if anyone received it. That second half can't be reliably in code either-- you may just need to ask someone. But addresses follow [specific rules outlined in RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4), so it should be possible to check the syntax to see if it **could** be valid.
 
 Enter regular expressions. Maybe. They certainly seem like the right tool for this job.
+
+## So About that Regex...
 
 If you hesitate before writing out the regex, you're not alone. The rules are a little more subtle than they seem. Did yours allow, for example, for a `+` in the middle of the `local-part` (the stuff before the `@`)? It's legal. So are a variety of other things that might not be immediately obvious.
 
@@ -43,9 +44,9 @@ let myString = // some string we want to parse
 let matches = detector.matches(in: myString, options: [], range: NSMakeRange(0, myString.count))
 ```
 
-This produces an array of `NSTextCheckingResult`. That class has a variety of optional properties that may be set depending on what kind of match an instance represents. Here we only asked for `.link` matches, so every result will include a value for the `url` property, which will be an instance of `URL`.
+This produces an array of `NSTextCheckingResult`, one per discovered data item. Matches have a variety of optional properties that may be set depending on what kind of match an instance represents. Here we only asked for `.link` matches, so every result will include a value for the `url` property, which will be an instance of `URL`. Other match types use other properties-- `phoneNumber`, or `addressComponents` for example.
 
-We're not done though, because `.link` will also match plain URLs found in text. We'll need to run through the matches to find what we need. Email addresses are represented as `mailto:` URLs here, so we'll look for that.
+We're not done though, because `.link` will also match plain URLs found in text. We'll need to run through the matches to find what we need. Email addresses are represented as `mailto:` URLs here (because they're treated as links), so we'll look for that.
 
 ```swift
 var addresses = [String]()
@@ -63,7 +64,9 @@ for match in matches {
 
 This code loops over the matches. For each one, it checks to see if the URL uses `mailto:`. If so, it extracts the email address and adds it to an array.
 
-There's one detail that might seem a little odd. I'm creating an instance of `URLComponents` to get the address, when it looks like the original `URL` would work on its own. Both classes have a `path` property, after all. Remember what I said about Foundation having literally decades of history? That also means there's some old cruft in places. `URL` parses URLs according to RFC 1808. That RFC was obsoleted by RFC 3986 back in 2005. `URL` still uses the older RFC, probably because changing it would break existing code. The upshot is that `URL` can't extract the email address, but `URLComponents` can. But since `NSTextCheckingResult` still produces a `URL`, the code above needs to convert.
+There's one detail that might seem a little odd. I'm creating an instance of `URLComponents` to get the address, when it looks like the original `URL` would work on its own. Both classes have a `path` property, after all. Why the extra step? Well, remember what I said about Foundation having literally decades of history? That also means there's some old cruft in places. `URL` parses URLs according to [RFC 1808](https://tools.ietf.org/html/rfc1808). That RFC was obsoleted by [RFC 3986](https://tools.ietf.org/html/rfc3986) back in 2005. `URL` still uses the older RFC, probably because changing it would break existing code. The upshot is that `URL` can't extract the email address, but `URLComponents` can. But since `NSTextCheckingResult` still produces a `URL`, the code above needs to convert.
+
+## Extending String
 
 This all comes together nicely in an extension to `String`.
 
@@ -98,6 +101,6 @@ Using this, you can take any string, call `emailAddresses()` on it, and get an a
 "Zip a dee doo dah".emailAddresses() // produces an empty array
 ```
 
-This extension lends itself to a variety of UI rules. If only one email address is allowed, check that the address array has exactly one entry. If you also require no extraneous characters, add a check that the address length is the same as the original string length.
+This extension lends itself to a variety of UI rules. If only one email address is allowed, check that the address array has exactly one entry. If you also require that there must be no extraneous characters, add a check that the address length is the same as the original string length.
 
 The end result is probably more or less what we'd get using a regular expression. `NSDataDetector` is a subclass of `NSRegularExpression`, after all, so it very likely uses one or more regular expressions under the hood. Using this approach means that I get to write code that I can read, though, which is always a plus. It also means that I get to have Apple engineers writing my regular expressions instead of dropping in a long string of line noise-like characters that I can only pretend to understand. I'll call it a win.
