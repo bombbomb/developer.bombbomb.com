@@ -7,7 +7,7 @@ I have a love/hate relationship with regular expressions. I **love** them becaus
 
 <!--more--> 
 
-Of course you can't be completely sure an email address is valid without sending an email and then checking to see if anyone received it. That second half can't be reliably in code either-- you may just need to ask someone. But addresses follow [specific rules outlined in RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4), so it should be possible to check the syntax to see if it **could** be valid.
+Of course you can't be completely sure an email address is valid without sending an email and then checking to see if anyone received it. That second half can't be done reliably in code either-- you may just need to ask someone. But addresses follow [specific rules outlined in RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4), so it should be possible to check the syntax to see if it **could** be valid.
 
 Enter regular expressions. Maybe. They certainly seem like the right tool for this job.
 
