@@ -3,6 +3,8 @@ title: Easy Cloudfront cache-busting with Travis-CI
 author: Patrick McDavid
 ---
 
+*Update February 27, 2018: There's a better workflow offered [here](/blog/2018/02/27/TravisCI-Cloudfront-Cache-Invalidation/)*
+
 This site is hosted on AWS' S3 via Cloudfront which is an easy way to keep it online with minimal concern at runtime. We're trying to get more contributors to this project in support of our [OpenAPI docs](/api), this blog, and other odds and ends.
 
 <!--more-->
