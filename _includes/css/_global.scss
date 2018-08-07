@@ -1,16 +1,16 @@
 $orange:     #FF6600;
-$yellow:     #FFC400;
-$red:        #FF0000;
+$yellow:     #FFCC00;
+$red:        #FA0000;
 $pink:       #F13C6E;
-$teal:       #4DBFBB;
-$blue:       #0096C9;
+$teal:       #4DC2BE;
+$blue:       #0099CC;
 $darkblue:   #006B94;
 $darkteal:   #38918F;
+$battleship: #484949;
+$almost-black:#2C2E2F;
 $white:      #FFFFFF;
 $gray1:      #E1E1E1;
 $gray2:      #999999;
-$gray3:      #484949;
-$gray4:      #2C2E2F;
 $black:      #000000;
 
 @mixin light(){font-weight:200;font-family:'Avenir LT W01_35 Light1475496', 'Avenir', Helvetica, Arial, sans-serif;}
@@ -23,4 +23,17 @@ $black:      #000000;
 body {
   background: $white;
   position: relative;
+}
+* {
+  //div, h1, h2, h3, h4, h5, h6, p, div, span {
+  &::-moz-selection {
+    background: #0099CC;
+    color: white;
+  }
+
+  &::selection {
+    background: #0099CC;
+    color: white;
+  }
+  //}
 }

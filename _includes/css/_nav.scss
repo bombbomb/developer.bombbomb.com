@@ -55,8 +55,8 @@
       line-height: 2;
       margin-right: -250px;
       width: 250px;
-      a {
-        color: $gray4;
+      a:visited, a, a:active {
+        color: $almost-black;
       }
     }
   }
