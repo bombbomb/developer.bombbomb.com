@@ -24,16 +24,13 @@ body {
   background: $white;
   position: relative;
 }
-* {
-  //div, h1, h2, h3, h4, h5, h6, p, div, span {
-  &::-moz-selection {
-    background: #0099CC;
-    color: white;
-  }
 
-  &::selection {
-    background: #0099CC;
-    color: white;
-  }
-  //}
+::-moz-selection {
+  background: #0099CC;
+  color: white;
+}
+
+::selection {
+  background: #0099CC;
+  color: white;
 }
