@@ -34,7 +34,6 @@ $('[data-type="background"]').each(function(){
 
 
 window.onload = function() {
-
     function handler1() {
         $('.menu-btn ul').animate({"right": '250px'});
         $('body').animate({"right": '250px'});
@@ -50,7 +49,6 @@ window.onload = function() {
     }
 
     $("#nav-icon3").one("click", handler1);
-
 }
 
 $(document).ready(function(){
@@ -58,3 +56,15 @@ $(document).ready(function(){
         $(this).toggleClass('open');
     });
 });
+
+function enforceHttps() {
+    if(window.location.host.indexOf('localhost') !== -1) {
+        return; //ignore for local environment.
+    }
+
+    if(window.location.protocol !== 'https:') {
+        window.location = window.location.href.replace(/^http:/, "https:");
+    }
+}
+
+enforceHttps();

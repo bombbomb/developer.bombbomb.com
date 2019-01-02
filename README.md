@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bombbomb/developer.bombbomb.com.svg?branch=master)](https://travis-ci.org/bombbomb/developer.bombbomb.com)
 
-Generates the site at [developer.bombbomb.com](http://developer.bombbomb.com)
+Generates the site at [developer.bombbomb.com](https://developer.bombbomb.com)
 
 To do:
  - Get Webhooks listed
